@@ -19,6 +19,12 @@
         android:id="@+id/secondFragment">
 
     </FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/thirdFragment">
+
+    </FrameLayout>
 
 
 </RelativeLayout>

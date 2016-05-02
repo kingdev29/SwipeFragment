@@ -22,9 +22,7 @@ public class FirstFragment extends android.app.Fragment implements View.OnClickL
 
         // The last two arguments ensure LayoutParams are inflated
         // properly.
-        Bundle args = getArguments();
-        View rootView = inflater.inflate(
-                R.layout.fragment_collection_object, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_collection_object, container, false);
         Button otherFragmentBtn = (Button) rootView.findViewById(R.id.btn_otherFragment);
         otherFragmentBtn.setOnClickListener(this);
         rootView.setBackgroundColor(Color.LTGRAY);
@@ -37,7 +35,8 @@ public class FirstFragment extends android.app.Fragment implements View.OnClickL
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 //        fragmentTransaction.setCustomAnimations()
-        fragmentTransaction.replace(R.id.secondFragment, secondFragment);
+        fragmentTransaction.replace(R.id.secondFragment, secondFragment,"secondFragment");
+        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
 }

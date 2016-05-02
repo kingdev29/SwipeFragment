@@ -16,7 +16,19 @@ public class MainActivity extends FragmentActivity {
         FragmentManager fragmentManager = getFragmentManager();
         android.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.firstFragment, firstFragment);
+        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
 
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (getFragmentManager().getBackStackEntryCount() != 0){
+            getFragmentManager().popBackStack();
+        }
+        else {
+            finish();
+        }
     }
 }
